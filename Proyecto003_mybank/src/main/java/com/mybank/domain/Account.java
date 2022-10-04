@@ -19,30 +19,42 @@ public class Account {
         return balance;
     }
 
-    public void deposit(double amt){
-        if(amt > 0 ){
-            this.balance = this.balance + amt;
-        } else {
-            System.out.println("Atencion! . No ingresó. No puede ingresar "
-                    + "importes negativos");
-        }
-        informa("deposito hecho");
+    public boolean deposit(double amt){
+//        if(amt > 0 ){
+//            this.balance = this.balance + amt;
+//        } else {
+//            System.out.println("Atencion! . No ingresó. No puede ingresar "
+//                    + "importes negativos");
+//        }
+//        informa("deposito hecho");
+    	
+    	balance = balance + amt;
+		return true;
     }
     
-    public void withdraw(double amt){
+    public boolean withdraw(double amt){
          //valido amt debe ser positivo
-         if(amt <= 0 ){
-             System.out.println("Atención!! Debe indicar un importe mayor que cero.");
-             return;
-         }
-   
-         if( balance >= amt ){
-             this.balance = this.balance - amt;
-         }else{
-              System.out.println("Atención!! No puede sacar importe "
-                      + "superior al saldo actual.");  
-         }
-         informa("retirada dinero hecho");
+//         if(amt <= 0 ){
+//             System.out.println("Atención!! Debe indicar un importe mayor que cero.");
+//             return;
+//         }
+//   
+//         if( balance >= amt ){
+//             this.balance = this.balance - amt;
+//         }else{
+//              System.out.println("Atención!! No puede sacar importe "
+//                      + "superior al saldo actual.");  
+//         }
+//         informa("retirada dinero hecho");
+    	  //valido amt debe ser positivo
+    	
+    	boolean result = false; // supone fallo de la  operación
+    	if ( amt <= balance ) {
+    	balance = balance - amt;
+    	result = true; // éxito de la operación
+    	}
+    	return result;
+    	
     }//fin withdraw
     
     //sobreescribimos el método toString
