@@ -10,10 +10,32 @@ public class Producto {
 	//final - constante
 	public static final double PRECIO_MINIMO =1.2;
 	
-	public Producto(String s) {
-		this.descripcion=s;
-		this.precio=PRECIO_MINIMO;
+	
+	
+	//constructor
+	public Producto(String s, double precio) {
+		if(s !=null) {
+			this.descripcion=s;
+		}else {
+			this.descripcion="";//INDEFINIDO
+		}
+//		this.precio=PRECIO_MINIMO;
+		if(precio >0) {
+			this.precio=precio;
+		}
 	}
+	
+	public Producto(int id, String descripcion) {
+		this(id, descripcion, PRECIO_MINIMO);
+	}
+	
+	public Producto(int id, String descripcion, double precio) {
+		// El this y paréntesis siempre van primero
+		this(descripcion, precio);// llama al constructor Producto(String s)
+		this.id=id;
+		this.precio=precio;
+	}
+	
 	
 	public void incrementar() {
 		int incremento =2;
@@ -21,6 +43,15 @@ public class Producto {
 		
 	}
 	
-	
+	public void prueba() {
+//		int x = (int)(Math.random() * 100); 
+//		int y;
+//		int z;
+//		if (x > 50) {
+//		y = 9;
+//		}
+//		z = y + x; // Posible uso antes de inicialización
+		}
+		
 	
 }

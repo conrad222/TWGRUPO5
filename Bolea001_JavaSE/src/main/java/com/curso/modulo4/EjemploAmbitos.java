@@ -12,7 +12,7 @@ public class EjemploAmbitos {
 	
 	double pm = Producto.PRECIO_MINIMO;
 	
-	Producto p = new Producto("lápiz");
+	Producto p = new Producto(1, "lápiz");
 	//ram en la memoria de pila una variable local p
 	//ram en la memoria dinámica
 	// con 3 atributos (var de instancia) id, descr, precio
@@ -20,6 +20,8 @@ public class EjemploAmbitos {
 //	p.PRECIO_MINIMO= 44.9;//mala practica
 //	Producto.PRECIO_MINIMO=44.9;
 	
-	Producto p2 = new Producto("zapato");
+	Producto p2 = new Producto(2, "zapato");
+	
+	Producto p3 = new Producto(3, "zapato");
 
 }
