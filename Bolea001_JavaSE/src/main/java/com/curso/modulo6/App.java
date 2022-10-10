@@ -2,9 +2,11 @@ package com.curso.modulo6;
 
 public class App {
 	public void hablarconGente(Empleado[] lista) {
-		for(Empleado a : lista) {
-			a.hablar();
-		}
+//		for(Empleado a : lista) {
+//			a.hablar();
+//		}
+		Ingeniero i= new Ingeniero();
+		
 	}
 	
 	public static void main(String[] args) {
