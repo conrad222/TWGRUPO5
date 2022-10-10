@@ -3,9 +3,9 @@ package com.curso.modulo6;
 import java.sql.Date;
 
 public class Empleado {
-	private String nombre; 
-	private double salario;
-	private Date fechaNacimiento;
+	public String nombre; 
+	public double salario;
+	public Date fechaNacimiento;
 	public String getNombre() {
 		return nombre;
 	}
