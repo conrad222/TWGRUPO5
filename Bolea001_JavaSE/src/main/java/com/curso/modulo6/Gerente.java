@@ -30,6 +30,8 @@ public class Gerente extends Empleado {// extends herencia entre gerente y emple
 
 	@Override
 	public String getDetails() {
+		//protected puede acceder los hijos
+//		this.nombre ="*" + this.nombre;
 		return super.getDetails()+ " Gerente de: " + departamento;
 		
 	}
