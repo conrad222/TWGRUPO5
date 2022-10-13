@@ -1,5 +1,5 @@
 package com.flota.dominio;
 
-public class Caja {
+public class Prueba {
 
 }
