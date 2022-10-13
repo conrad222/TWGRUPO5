@@ -13,7 +13,7 @@ import java.security.PublicKey;
 
 import com.flota.pruebas.Caja;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 	
 	//atributos
 	private double cargaMaxima;
@@ -98,4 +98,12 @@ public class Vehiculo {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+	
+//	public double consumoFuel() {
+//		return this.numCajas * 1.5;
+//	}
+	
+	public abstract double consumoFuel();
+		
+	
 }
