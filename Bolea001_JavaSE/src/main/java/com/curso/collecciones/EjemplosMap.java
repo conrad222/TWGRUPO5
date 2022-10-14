@@ -8,7 +8,7 @@ import java.util.Set;
 public class EjemplosMap {
 	
 	public static void main(String[] args) {
-		
+		//Todos las aplicaciones hasta ahora eran Java Standar Edition, con la aplicación web sera JAVA Enterprise Edition: para aplicaciones web, componentes, mensajeria
 		//Map <<Interface>>
 		
 		//	. solo trabajan con objetos
