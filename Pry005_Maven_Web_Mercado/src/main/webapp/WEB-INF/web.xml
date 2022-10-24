@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ListaProductosServlet</servlet-name>
+  	<display-name>ListaProductosServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.curso.mercado.servlet.ListaProductosServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ListaProductosServlet</servlet-name>
+  	<url-pattern>/lista-productos</url-pattern>
+  </servlet-mapping>
 </web-app>
