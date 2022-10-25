@@ -23,8 +23,13 @@ public class PruebaTrabajoJPA {
 		EntityManager em = factory.createEntityManager();
 	
 		//3. Obtener el trabajo con el id "AD_VP"
-		
 		Trabajo t = em.find(Trabajo.class, "AD_VP");
+		if(t==null) {
+			System.out.println("no existe el trabajo AD_VP");
+		}else {
+			System.out.println(t);
+			
+		}
 		System.out.println(t);
 	
 		//4. Crear un trabajo
