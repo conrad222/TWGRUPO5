@@ -1,6 +1,7 @@
 package com.curso.jpa.entidades;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Objects;
 
 import javax.persistence.*;
@@ -22,6 +23,13 @@ public class Customer implements Serializable{
 	@OneToOne
 	@JoinColumn(name="CUSTRECORD_RECID") //FK
 	private Record record;
+	
+	//lista de todos los pedidos del cliente
+	@OneToMany(mappedBy="cliente")
+	//mappedby es ele nombre del atributo de la clase Order
+	// que tiene la relacion ManyToOne
+	private Collection<Order> pedidos;
+	
 	
 	
 	public Customer() {
@@ -84,7 +92,13 @@ public class Customer implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 	
+	public Collection<Order> getPedidos() {
+		return pedidos;
+	}
 	
+	public void setPedidos(Collection<Order> pedidos) {
+		this.pedidos = pedidos;
+	}
 
 	
 	

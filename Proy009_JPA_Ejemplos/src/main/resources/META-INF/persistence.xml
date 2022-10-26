@@ -10,7 +10,8 @@
 		<class>com.curso.jpa.entidades.Empleado</class>
 		<class>com.curso.jpa.entidades.Customer</class>
 		<class>com.curso.jpa.entidades.Record</class>
-		
+		<class>com.curso.jpa.entidades.Order</class>
+				
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:49161:xe" />
