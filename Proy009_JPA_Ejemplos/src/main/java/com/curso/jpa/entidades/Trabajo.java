@@ -28,6 +28,8 @@ public class Trabajo implements Serializable{
 	@Column(name="MAX_SALARY")
 	private Double salarioMax;
 	
+	private boolean isSelected;
+	
 	public Trabajo() {
 		
 	}
