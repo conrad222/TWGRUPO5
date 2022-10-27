@@ -46,6 +46,13 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>EclipseLink Repo</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+			<name>EclipseLink Repo</name>
+		</repository>
+	</repositories>
 	<build>
 		<finalName>TiendaOnline</finalName>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
