@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 public class Customer implements Serializable{
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CURSO_SEQ")
 	@SequenceGenerator(sequenceName = "CURSO_SEQ", name = "CURSO_SEQ", allocationSize=1)	
@@ -20,16 +21,15 @@ public class Customer implements Serializable{
 	//@Column(name="CUSTRECORD_RECID")
 	//private Long recordId;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY) //EAGER
 	@JoinColumn(name="CUSTRECORD_RECID") //FK
 	private Record record;
 	
 	//lista de todos los pedidos del cliente
-	@OneToMany(mappedBy="cliente")
-	//mappedby es ele nombre del atributo de la clase Order
-	// que tiene la relacion ManyToOne
+	@OneToMany(mappedBy="cliente", fetch = FetchType.LAZY) //LAZY
+	// mappedby es el nombre del atributo de la clase Order
+	// que tiene la relación ManyToOne
 	private Collection<Order> pedidos;
-	
 	
 	
 	public Customer() {
@@ -74,6 +74,14 @@ public class Customer implements Serializable{
 	}
 
 
+	public Collection<Order> getPedidos() {
+		return pedidos;
+	}
+	
+	public void setPedidos(Collection<Order> pedidos) {
+		this.pedidos = pedidos;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -92,15 +100,8 @@ public class Customer implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 	
-	public Collection<Order> getPedidos() {
-		return pedidos;
-	}
 	
-	public void setPedidos(Collection<Order> pedidos) {
-		this.pedidos = pedidos;
-	}
 
-	
 	
 	
 }

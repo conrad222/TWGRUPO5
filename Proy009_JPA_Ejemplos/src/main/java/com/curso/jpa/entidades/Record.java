@@ -22,6 +22,11 @@ public class Record implements Serializable{
 	@Column(name="RECORD_NAME")
 	private String  name;
 	
+	@OneToOne(mappedBy = "record") // nombre del atributo que tiene
+	                         // la relación OneToOne en Customer
+	private Customer cliente;
+	
+	
 	public Record() {	}
 
 	public Record(Integer id, String name) {
@@ -68,7 +73,6 @@ public class Record implements Serializable{
 		return "Record [id=" + id + ", name=" + name + "]";
 	}
 
-	
 	
 	
 	

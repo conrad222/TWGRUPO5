@@ -7,32 +7,33 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "JOBS",schema = "HR")
-public class Trabajo implements Serializable{
+public class Trabajo implements Serializable {
 
 	/**
 	 * indica la versión de la clase
 	 */
-	private static final long serialVersionUID =2L; // Distribuir la clase, esa versión de la clase en diferentes máquinas, como JAVA Virtual Machine
+	private static final long serialVersionUID = 2L;
 	
 	//ATRIBUTOS
-	@Id
-	@Column(name="JOB_ID")
-	private String id;
-	@Column(name="JOB_TITLE")
-	private String tituloTrabajo;
-	@Column(name="MIN_SALARY")
-	private Double salarioMin;
-	@Column(name="MAX_SALARY")
-	private Double salarioMax;
-	
-	private boolean isSelected;
-	
-	public Trabajo() {
-		
-	}
+	 @Id
+	 @Column(name="JOB_ID")
+     private String id;
+	 @Column(name="JOB_TITLE")
+     private String tituloTrabajo;
+	 @Column(name="MIN_SALARY")
+     private Double salarioMin;
+	 @Column(name="MAX_SALARY")
+     private Double salarioMax;
+
+	 @Transient
+	 private boolean isSelected;
+	 
+     public Trabajo() {}
+
 
 	public Trabajo(String id, String tituloTrabajo, Double salarioMin, Double salarioMax) {
 		super();
@@ -42,46 +43,48 @@ public class Trabajo implements Serializable{
 		this.salarioMax = salarioMax;
 	}
 
+
 	public String getId() {
 		return id;
 	}
+
 
 	public void setId(String id) {
 		this.id = id;
 	}
 
+
 	public String getTituloTrabajo() {
 		return tituloTrabajo;
 	}
+
 
 	public void setTituloTrabajo(String tituloTrabajo) {
 		this.tituloTrabajo = tituloTrabajo;
 	}
 
+
 	public Double getSalarioMin() {
 		return salarioMin;
 	}
+
 
 	public void setSalarioMin(Double salarioMin) {
 		this.salarioMin = salarioMin;
 	}
 
+
 	public Double getSalarioMax() {
 		return salarioMax;
 	}
+
 
 	public void setSalarioMax(Double salarioMax) {
 		this.salarioMax = salarioMax;
 	}
 
 	@Override
-	public String toString() {
-		return "Trabajo [id=" + id + ", tituloTrabajo=" + tituloTrabajo + ", salarioMin=" + salarioMin + ", salarioMax="
-				+ salarioMax + "]";
-	}
-
-	@Override //Codificar los objetos, en colecciones de tipo hash
-	public int hashCode() {//hashcode es numero
+	public int hashCode() {
 		return Objects.hash(id);
 	}
 
@@ -96,7 +99,17 @@ public class Trabajo implements Serializable{
 		Trabajo other = (Trabajo) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
+
+	@Override
+	public String toString() {
+		return "Trabajo [id=" + id 
+				+ ", tituloTrabajo=" 
+				+ tituloTrabajo 
+				+ ", salarioMin=" + salarioMin + ", salarioMax="
+				+ salarioMax + "]";
+	}
+
 	
 	
 	
