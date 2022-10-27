@@ -43,12 +43,17 @@ public class Empleado implements Serializable {
 	
 	@Column(name = "SALARY")
 	private Double salario;
+	
 	@Column(name = "COMMISSION_PCT")
 	private Double comision;
+	
 	@Column(name = "MANAGER_ID")
 	private Long idManager;
-	@Column(name = "DEPARTMENT_ID")
-	private Integer idDepartamento;
+	
+	@ManyToOne
+	@JoinColumn(name = "DEPARTMENT_ID")
+//	private Integer idDepartamento;
+	private Departamento departamento;
 
 	public Empleado() {
 		super();
@@ -139,12 +144,12 @@ public class Empleado implements Serializable {
 		this.idManager = idManager;
 	}
 
-	public Integer getIdDepartamento() {
-		return idDepartamento;
+	public Departamento getDepartamento() {
+		return departamento;
 	}
-
-	public void setIdDepartamento(Integer idDepartamento) {
-		this.idDepartamento = idDepartamento;
+	
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
 	
