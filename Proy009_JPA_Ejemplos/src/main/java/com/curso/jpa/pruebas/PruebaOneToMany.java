@@ -13,7 +13,7 @@ public class PruebaOneToMany {
 		
 		//1. Crear una Factoria de Entiny Manager
 		EntityManagerFactory factory =
-						Persistence.createEntityManagerFactory("OraceHRPU");
+						Persistence.createEntityManagerFactory("OracleHRPU");
 				
 		//2. Obtenemos un Entity Manager 
 		 

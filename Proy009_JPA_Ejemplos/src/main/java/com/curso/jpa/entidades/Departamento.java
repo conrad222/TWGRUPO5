@@ -6,37 +6,40 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="DEPARTMENTS")
-public class Departamento implements Serializable{
-
+@NamedQueries({
+	@NamedQuery(name=ConsultasRRHH.DEPARTAMENTO_ALL, 
+			    query="SELECT d FROM Departamento d"),
+	@NamedQuery(name="Departamento.findByManager", 
+	            query="SELECT d FROM Departamento d "
+	            		+ "WHERE d.idManager= :idManager"),
+	@NamedQuery(name="Departamento.findSinManager", 
+	           query="SELECT d FROM Departamento d "
+	           		+ "WHERE d.idManager IS NULL"),
+})
+public class Departamento implements Serializable {
+	
 	@Id
-	@Column(name="department_id")
+	@Column(name="DEPARTMENT_ID")
 	private Integer id;
 	
 	@Column(name="DEPARTMENT_NAME")
 	private String nombreDepartamento;
-	
+		
 	@Column(name="MANAGER_ID")
-	private String managerId;
+	private Integer idManager;
 	
 	@Column(name="LOCATION_ID")
-	private String idLocalidad;
-
-	public Departamento(Integer id, String nombreDepartamento, String managerId, String idLocalidad) {
-		super();
-		this.id = id;
-		this.nombreDepartamento = nombreDepartamento;
-		this.managerId = managerId;
-		this.idLocalidad = idLocalidad;
-	}
-
-	public Departamento() {
-		
-	}
+	private Integer idLocalidad;
 	
+	public Departamento() {
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -53,19 +56,19 @@ public class Departamento implements Serializable{
 		this.nombreDepartamento = nombreDepartamento;
 	}
 
-	public String getManagerId() {
-		return managerId;
+	public Integer getIdManager() {
+		return idManager;
 	}
 
-	public void setManagerId(String managerId) {
-		this.managerId = managerId;
+	public void setIdManager(Integer idManager) {
+		this.idManager = idManager;
 	}
 
-	public String getIdLocalidad() {
+	public Integer getIdLocalidad() {
 		return idLocalidad;
 	}
 
-	public void setIdLocalidad(String idLocalidad) {
+	public void setIdLocalidad(Integer idLocalidad) {
 		this.idLocalidad = idLocalidad;
 	}
 
@@ -88,7 +91,7 @@ public class Departamento implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Departamento [id=" + id + ", nombreDepartamento=" + nombreDepartamento + ", managerId=" + managerId
+		return "Departamento [id=" + id + ", nombreDepartamento=" + nombreDepartamento + ", idManager=" + idManager
 				+ ", idLocalidad=" + idLocalidad + "]";
 	}
 	
