@@ -32,8 +32,6 @@ public class LoginServlet extends HttpServlet {
     	// es para todos los usuarios en todas las pagínas/Servlets/jsp
     	System.out.println("..... " + config.getServletContext());
     	config.getServletContext().setAttribute("tituloTienda", "LAS MARAVILLAS");
-    	System.out.println("... probando si esta bien configuracion persistencia");
-    	new LoginServlet();
     }
 
     
