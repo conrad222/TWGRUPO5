@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--  por defecto es sigleton - uno para toda la aplicacion -->
+    <!-- Este bean es lo mismo que el de abajo -->
+    <bean id="miSaludador"
+    	class="com.curso.spring.ejemplo001.SaludoServiceImp"></bean>
+    
+    <bean id="saludador1" 
+         class="com.curso.spring.ejemplo001.SaludoServiceImp"
+         scope="singleton"
+         lazy-init="true"></bean> <!-- init-method="false false sirve en los singleton y hace que no funcione saludador1, lazy init true lo instancia despues del syso-->
+         
+     <bean id="saludadorPrototipo" 
+         class="com.curso.spring.ejemplo001.SaludoServiceImp"
+         scope="prototype"></bean> 
+         
+     <!--  como instanciar un bean pasandole arg del constructor -->
+    <bean id="saludadorAdios" 
+         class="com.curso.spring.ejemplo001.SaludoServiceImp">
+            <constructor-arg index="0" value="adios"></constructor-arg>
+	</bean> 
+
+</beans>
