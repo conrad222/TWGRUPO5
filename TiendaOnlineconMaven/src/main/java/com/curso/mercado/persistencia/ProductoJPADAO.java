@@ -1,3 +1,5 @@
+package com.curso.mercado.persistencia;
+
 
 public interface ProductoJPADAO {
 

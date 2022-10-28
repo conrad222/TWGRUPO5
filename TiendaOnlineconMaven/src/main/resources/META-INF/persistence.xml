@@ -6,7 +6,7 @@
 	<!--  otra unidad persistenci para ir HR de oracle -->
 	<persistence-unit name="OracleHRPU" transaction-type="RESOURCE_LOCAL">
 		
-		<class>com.curso.mercado.persistencia.Trabajo</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
