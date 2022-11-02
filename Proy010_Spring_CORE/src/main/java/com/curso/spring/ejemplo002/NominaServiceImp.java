@@ -5,11 +5,12 @@ import org.springframework.stereotype.Service;
 
 import com.curso.spring.ejemplo001.NominaService;
 
-@Service
+//@Service
+@Service(value="nominas")
 public class NominaServiceImp implements NominaService{
 	//inyecta en la variable de ref irpService una instancia de IRPFServiceImp
 	@Autowired
-	private IRPFService irpfService;
+	private IRPFService irpfService; //Nombre del interface
 	
 	public NominaServiceImp() {
 		System.out.println("... constructor nsi");

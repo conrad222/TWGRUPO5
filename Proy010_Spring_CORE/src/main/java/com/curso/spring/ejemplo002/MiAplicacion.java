@@ -2,8 +2,10 @@ package com.curso.spring.ejemplo002;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 import com.curso.spring.ejemplo001.NominaService;
+
 
 public class MiAplicacion {
 
